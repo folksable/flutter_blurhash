@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:developer' as dev;
 import 'dart:math';
 
@@ -63,7 +65,7 @@ class _BlurHashAppState extends State<BlurHashApp> {
   double progression = 0;
 
   void onStarted() {
-    debugPrint("Ready");
+    debugPrint('Ready');
   }
 
   double norm(double value, double min, double max) => (value - min) / (max - min);
@@ -146,7 +148,7 @@ class Header extends StatelessWidget {
     return Column(
       children: <Widget>[
         Text(
-          "Discover",
+          'Discover',
           style: GoogleFonts.josefinSans(
             textStyle: TextStyle(
                 color: color, fontSize: 180, height: .84, fontWeight: FontWeight.bold, decoration: TextDecoration.none),
@@ -155,7 +157,7 @@ class Header extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(top: 16),
           child: Text(
-            "Our\nCollection",
+            'Our\nCollection',
             style: GoogleFonts.josefinSans(
               textStyle: TextStyle(
                   color: color,
@@ -254,7 +256,7 @@ class _SynchronizedDisplayState extends State<SynchronizedDisplay> with SingleTi
 
   void onStarted() => controller.forward();
 
-  void onDecoded() => dev.log("Hash ${widget.hash} decoded");
+  void onDecoded() => dev.log('Hash ${widget.hash} decoded');
 
-  void onDisplayed() => dev.log("Hash ${widget.uri} displayed");
+  void onDisplayed() => dev.log('Hash ${widget.uri} displayed');
 }

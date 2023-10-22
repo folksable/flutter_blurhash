@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 
+// ignore: constant_identifier_names
 const _DEFAULT_SIZE = 32;
 
 class BlurHashImage extends ImageProvider<BlurHashImage> {
@@ -48,7 +49,7 @@ class BlurHashImage extends ImageProvider<BlurHashImage> {
       : other is BlurHashImage && other.blurHash == blurHash && other.scale == scale;
 
   @override
-  int get hashCode => hashValues(blurHash.hashCode, scale);
+  int get hashCode => Object.hash(blurHash.hashCode, scale);
 
   @override
   String toString() => '$runtimeType($blurHash, scale: $scale)';

@@ -1,6 +1,7 @@
+// ignore_for_file: avoid_dynamic_calls
+
 import 'dart:async';
 import 'dart:math';
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/foundation.dart';
@@ -198,14 +199,14 @@ bool validateBlurhash(String blurhash) {
   final x = (sizeFlag % 9) + 1;
 
   if (blurhash.length != 4 + 2 * x * y) {
-    debugPrint("blurhash length mismatch: length is ${blurhash.length} but it should be ${4 + 2 * x * y}");
+    debugPrint('blurhash length mismatch: length is ${blurhash.length} but it should be ${4 + 2 * x * y}');
     return false;
   }
 
   return true;
 }
 
-const _digitCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#\$%*+,-.:;=?@[]^_{|}~";
+const _digitCharacters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#\$%*+,-.:;=?@[]^_{|}~';
 
 class Style {
   final String name;

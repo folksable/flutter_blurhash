@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 
+// ignore: constant_identifier_names
 const _DEFAULT_SIZE = 32;
 
 /// Display a Hash then fade to Image
@@ -137,10 +138,10 @@ class BlurHashState extends State<BlurHash> {
             loaded = true;
             widget.onReady?.call();
             return _DisplayImage(
-              child: img,
               duration: widget.duration,
               curve: widget.curve,
               onCompleted: () => widget.onDisplayed?.call(),
+              child: img,
             );
           } else {
             return const SizedBox();
@@ -230,7 +231,7 @@ class UiImage extends ImageProvider<UiImage> {
   }
 
   @override
-  int get hashCode => hashValues(image.hashCode, scale);
+  int get hashCode => Object.hash(image.hashCode, scale);
 
   @override
   String toString() => '$runtimeType(${describeIdentity(image)}, scale: $scale)';
